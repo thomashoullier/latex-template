@@ -105,9 +105,17 @@
 % Allow an extra pass to fix overfull hboxes by allowing more whitespace.
 \emergencystretch=1em
 
-% Page numbering
+% Page numbering and copyright notice.
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+
+\fancypagestyle{FirstPage}{
+\fancyhf{} % Clear footer.
+\rfoot{\thepage \hspace{1pt} of \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt} % Remove rule at top of page
+\lfoot{\href{https://creativecommons.org/licenses/by/4.0/}
+       {\includesvg[inkscapelatex=false,height=14pt]{images/ccby.svg}}}}
+
 \fancypagestyle{plain}{
 \fancyhf{} % Clear footer.
 \rfoot{\thepage \hspace{1pt} of \pageref*{LastPage}}
@@ -119,8 +127,9 @@
 \frenchspacing
 \maketitle
 \tableofcontents
-
-%% \include{chapters}
+\thispagestyle{FirstPage}
+\pagestyle{plain}
+\include{chapters/chapter1}
 
 \appendix
 \cleardoublepage
