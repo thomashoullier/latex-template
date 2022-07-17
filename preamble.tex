@@ -5,7 +5,7 @@
 \usepackage{svg} %svg graphics
 \usepackage{siunitx} % units formatting
 
-\usepackage[backend=biber,style=numeric,citestyle=numeric-comp,maxcitenames=99]{biblatex}
+\usepackage[backend=biber,style=numeric,citestyle=numeric-comp,maxcitenames=99,dateabbrev=false]{biblatex}
 \addbibresource{biblio.bib}
 \usepackage{setspace} % Bibliography spacings
 \DeclareSourcemap{
@@ -17,6 +17,11 @@
 \setcounter{biburllcpenalty}{7000} % break long url in bibliography
 \setcounter{biburlucpenalty}{8000}
 \renewcommand*{\bibfont}{\footnotesize} % bibliography font size
+% Format of biblatex urldate in the bibliography.
+\DeclareFieldFormat{urldate}{%
+  Visited on \thefield{urlday}\addspace%
+  \mkbibmonth{\thefield{urlmonth}}\addspace%
+  \thefield{urlyear}\isdot}
 \usepackage[ruled,vlined]{algorithm2e} % Algorithms.
 \usepackage{algorithmic}
 \usepackage{mathtools} % Ceiling function.
@@ -24,8 +29,8 @@
 \usepackage{interval} % Writing intervals.
 \usepackage[font={footnotesize,sf}]{caption} %Caption for figures in minipages.
 \usepackage{floatrow}
-\floatsetup[figure]{capposition=bottom} % Figure captions always below.
-\RawFloats[figure]
+% Figure captions always below. Figures always centered.
+\floatsetup[figure]{capposition=bottom,objectset=centering}
 \usepackage{wrapfig} %Wrapping figure with text.
 \usepackage{stmaryrd} % Double brackets for integers interval.
 \usepackage{doi} % Hyperlink DOI

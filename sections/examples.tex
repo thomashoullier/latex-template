@@ -2,7 +2,12 @@
 We provide examples of some of the latex features and packages we use most.
 
 \subsection{Citation}
-Example citation \cite{Gehrels:2016}.
+Citations are made in the following way:
+\begin{itemize}
+\item Single citation: \cite{Gehrels:2016}.
+\item Two citations:
+\item Citations list:
+\end{itemize}
 
 % TODO: Show multiple citations.
 
@@ -21,7 +26,8 @@ For instance:
 Equations are numbered and can be referenced.
 \begin{itemize}
 \item Single equation: \cref{eq:example}.
-\item Multiple equations: \cref{eq:example,eq:example2}
+\item Two equations: \cref{eq:example,eq:example2}
+\item Equations list: 
 \end{itemize}
 
 \begin{equation} \label{eq:example}
@@ -37,5 +43,19 @@ p_1(x) = A_0 x + B_0
 \end{equation}
 
 \subsection{Figures}
+Figures are referenced in this way:
+\begin{itemize}
+\item Single figure: \cref{fig:svg}.
+\item Two figures:
+\item Figures list:
+\end{itemize}
+
+\begin{figure}
+\includesvg[width=.6\textwidth]{images/inkscape-logo.svg}
+\caption{\label{fig:svg} Example vector image in svg format. This is the
+Inkscape™ logo. Inkscape is a \gls{svg} editor \cite{inkscape}.}
+\end{figure}
+
+My own rules of thumb regarding the format of images is:
 
 \subsection{Tables}
