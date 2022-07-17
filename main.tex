@@ -1,6 +1,6 @@
 %% Document-wide settings.
 \documentclass[letterpaper]{article}
-\title{Document title}
+\title{Latex article template}
 \author{Thomas HOULLIER} 
 
 %% Loading packages
@@ -12,7 +12,7 @@
 \usepackage[colorlinks=true, allcolors=blue,
             hyperfootnotes=false,
             pdfauthor={Thomas HOULLIER},
-            pdftitle={<Document title>},
+            pdftitle={Latex article template},
 	    pdfkeywords={<keywords>}]
             {hyperref} % Links for ref/cite.
 \usepackage[backend=biber,style=numeric,citestyle=numeric-comp,maxcitenames=99]{biblatex}
@@ -122,10 +122,19 @@
 \renewcommand{\headrulewidth}{0pt} % Remove rule at top of page
 }
 
+% Version history
+\usepackage{vhistory}
+
 % Document
 \begin{document}
 \frenchspacing
+\date{v1.0 -- \today}
 \maketitle
+
+\begin{versionhistory}
+\vhEntry{1.0}{\today}{TH}{creation}
+\end{versionhistory}
+
 \tableofcontents
 \thispagestyle{FirstPage}
 \pagestyle{plain}
