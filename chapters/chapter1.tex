@@ -4,6 +4,8 @@ We provide examples of some of the latex features and packages we use most.
 \subsection{Citation}
 Example citation \cite{Gehrels:2016}.
 
+% TODO: Show multiple citations.
+
 \subsection{Glossary}
 Acronyms are defined in a glossary at the beginning of the document. Only
 actually used acronyms are included. The acronyms are defined in the text
@@ -14,3 +16,26 @@ For instance:
 \item First use: \gls{RBF}
 \item Subsequent uses: \gls{RBF}
 \end{itemize}
+
+\subsection{Equations}
+Equations are numbered and can be referenced.
+\begin{itemize}
+\item Single equation: \cref{eq:example}.
+\item Multiple equations: \cref{eq:example,eq:example2}
+\end{itemize}
+
+\begin{equation} \label{eq:example}
+\int_{a}^{b} \omega(x) f(x) \approx \sum_{i=1}^n w_i f(x_i)
+\end{equation}
+
+\begin{equation} \label{eq:example2}
+\begin{cases}
+p_{n+1}(x) = (A_n x + B_n) p_n(x) - C_n p_{n-1}(x) \\
+p_0(x) = 1 \\
+p_1(x) = A_0 x + B_0
+\end{cases}
+\end{equation}
+
+\subsection{Figures}
+
+\subsection{Tables}

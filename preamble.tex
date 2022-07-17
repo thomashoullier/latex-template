@@ -38,14 +38,17 @@
 \usepackage[acronym,nonumberlist,nogroupskip,nopostdot]{glossaries} % Glossary for acronyms.
 \renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}} % No color on links for abbrev.
 
-\usepackage[capitalise]{cleveref} % Include eg. "Fig." in front of figures.
+\usepackage[capitalise,nameinlink]{cleveref} % Include eg. "Fig." in front of figures.
 \crefname{algorithm}{Alg.}{Algs.}
 \crefname{table}{Tab.}{Tabs.}
-% No parentheses in equation references.
-\creflabelformat{equation}{#2\textup{#1}#3}
+\crefname{equation}{Eq}{Eqs.}
+% Equation cross-references.
+%\creflabelformat{equation}{#2#1#3}
+\crefformat{equation}{(#2Eq.\thinspace#1#3)}
+
 % No parentheses in equation labels.
-\newtagform{noparen}{}{}
-\usetagform{noparen}
+%\newtagform{noparen}{}{}
+%\usetagform{noparen}
 
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} % Ceiling function.
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} % Floor function.
