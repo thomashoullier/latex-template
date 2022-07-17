@@ -9,5 +9,5 @@ in physics. It is not particularly well presented.
 Compile the document with, while in the same folder as `main.tex`:
 
 ```shell
-latexmk -pdf
+latexmk -pdf main.tex
 ```
