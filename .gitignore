@@ -20,5 +20,6 @@
 *.ist
 *.hst
 *.ver
+*.lot
 
 svg-inkscape
