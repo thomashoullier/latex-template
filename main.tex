@@ -12,10 +12,6 @@
 
 \input{preamble}
 
-% Glossaries
-%\makeglossaries
-%\loadglsentries{glossary/glossary.tex}
-
 % Document
 \begin{document}
 \frenchspacing
@@ -34,6 +30,7 @@ article format.
 \end{versionhistory}
 
 \tableofcontents
+\printglossary[type=\acronymtype,style=index]
 \thispagestyle{FirstPage}
 \pagestyle{plain}
 \include{chapters/chapter1}
