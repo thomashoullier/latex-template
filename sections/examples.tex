@@ -14,8 +14,8 @@ Citations are made in the following way:
 The bibliography will automatically only include the references which
 were cited in the document.
 
-\subsection{Glossary}
-Acronyms are defined in a glossary at the beginning of the document. Only
+\subsection{Acronyms}
+Acronyms are defined in a list at the beginning of the document. Only
 actually used acronyms are included. The acronyms are defined in the text
 automatically the first time they are used.
 
@@ -26,12 +26,8 @@ For instance:
 \end{itemize}
 
 \subsection{Equations}
-Equations are numbered and can be referenced.
-\begin{itemize}
-\item Single equation: \cref{eq:example}.
-\item Two equations: \cref{eq:example,eq:example2}.
-\item Equations list: \cref{eq:example,eq:example2,eq:example3}.
-\end{itemize}
+Equations are written in the usual manner (see
+\cref{eq:example,eq:example2,eq:example3}).
 
 \begin{equation} \label{eq:example}
 \int_{a}^{b} \omega(x) f(x) \approx \sum_{i=1}^n w_i f(x_i)
@@ -53,12 +49,7 @@ e^{ - at} \cos (\Omega t)u(t) \Leftrightarrow
 See the LaTeX equation examples at \cite{equationsheet,SO-latex-equations}.
 
 \subsection{Figures}
-Figures are referenced in this way:
-\begin{itemize}
-\item Single figure: \cref{fig:svg}.
-\item Two figures: \cref{fig:svg,fig:sinus}.
-\item Figures list: \cref{fig:svg,fig:sinus,fig:photo}.
-\end{itemize}
+Figures have the following appearance (see \cref{fig:svg,fig:sinus,fig:photo}).
 
 \begin{figure}
 \includesvg[width=.6\textwidth]{images/inkscape-logo.svg}
@@ -102,12 +93,8 @@ that would be excessive for document rendering.
 \end{itemize}
 
 \subsection{Tables}
-Tables may be created and referenced.
-\begin{itemize}
-\item Single table: \cref{tab:example1}.
-\item Two tables: \cref{tab:example1,tab:example2}.
-\item Tables list: \cref{tab:example1,tab:example2,tab:example3}.
-\end{itemize}
+Tables may be created in the following way (see
+\cref{tab:example1,tab:example2,tab:example3}).
 
 \begin{table} \caption{\label{tab:example1} Example table.}
 \begin{tabular}{l | c c c} \hline
@@ -133,8 +120,25 @@ Tables may be created and referenced.
 \hline \end{tabular}
 \end{table}
 
-
 \subsection{Algorithms}
+Algorithms may be typeset as follows \cref{alg:euclid-gcd}.
+
+\begin{algorithm}
+\caption{\label{alg:euclid-gcd} Euclid's algorithm for \gls{GCD}
+\cite{enwiki:euclid-algorithm}.}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+
+\Input{$(A, B) \in \mathbb{N}$}
+\KwResult{$\text{gcd}(A, B)$}
+\BlankLine
+$X \gets A$\;
+$Y \gets B$\;
+\While{$X \neq Y$}{
+  \eIf{$X > Y$}
+    {$X \gets X - Y$}
+    {$Y \gets Y - X$}}
+\KwRet{$X$}
+\end{algorithm}
 
 \subsection{Inline code and Blocks of code}
 
@@ -151,4 +155,34 @@ Epigraphs can be included. They are meant for the beginning of sections.
 \subsection{Icons}
 The fontawesome package \cite{fontawesome-latex} may be used for small icons
 in-line with the text \faSmileO~\faMedkit~\faBicycle.
+
+\subsection{Cross-references}
+We list cases of cross-referencing to check how they look.
+
+\begin{itemize}
+\item Equations
+\begin{itemize}
+  \item Single: \cref{eq:example}.
+  \item Two: \cref{eq:example,eq:example2}.
+  \item List: \cref{eq:example,eq:example2,eq:example3}.
+\end{itemize}
+\item Figures
+\begin{itemize}
+  \item Single: \cref{fig:svg}.
+  \item Two: \cref{fig:svg,fig:sinus}.
+  \item List: \cref{fig:svg,fig:sinus,fig:photo}
+\end{itemize}
+\item Tables
+\begin{itemize}
+  \item Single: \cref{tab:example1}.
+  \item Two: \cref{tab:example1,tab:example2}.
+  \item List: \cref{tab:example1,tab:example2,tab:example3}.
+\end{itemize}
+\item Algorithms
+\begin{itemize}
+  \item Single: \cref{alg:euclid-gcd}
+  \item Two:
+  \item List:
+\end{itemize}
+\end{itemize}
 
