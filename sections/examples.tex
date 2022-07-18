@@ -141,7 +141,6 @@ $Y \gets B$\;
 \end{algorithm}
 
 \subsection{Inline code and Blocks of code}
-% TODO: See https://www.overleaf.com/learn/latex/Code_listing
 Inline code: \lstinline{cat /etc/group}. Blocks of code are
 \cref{lst:python,lst:octave}.
 
@@ -160,12 +159,13 @@ array([15.,  -4.,   0.,  -1.,   0.,  -4.])
 \end{lstlisting}
 
 \begin{lstlisting}[language=Octave,
-                   caption={Octave code sample \cite{octave-special-matrices}.},
+                   caption={Octave code sample \cite{octave-example}.},
                    label={lst:octave}]
-y = [];
-for i = 1:columns (r)
-  y = [y, x(r(1,i)*ones(1, r(2,i)))];
-endfor
+m = rows (A); n = columns (A);
+[U, S, V] = svd (A);
+b = U'*b;
+x = (S'*S + alpha^2 * eye (n)) \ (S' * b);
+x = V*x;
 \end{lstlisting}
 
 \subsection{Footnotes}
