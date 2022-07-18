@@ -142,6 +142,31 @@ $Y \gets B$\;
 
 \subsection{Inline code and Blocks of code}
 % TODO: See https://www.overleaf.com/learn/latex/Code_listing
+Inline code: \lstinline{cat /etc/group}. Blocks of code are
+\cref{lst:python,lst:octave}.
+
+\begin{lstlisting}[language=Python,
+                   caption={Python code sample \cite{numpy-hfft}.},
+                   label={lst:python}]
+>>> signal = np.array([1, 2, 3, 4, 3, 2])
+>>> np.fft.fft(signal)
+array([15.+0.j,  -4.+0.j,   0.+0.j,  -1.-0.j,   0.+0.j,  -4.+0.j]) # may vary
+
+>>> np.fft.hfft(signal[:4]) # Input first half of signal
+array([15.,  -4.,   0.,  -1.,   0.,  -4.])
+
+>>> np.fft.hfft(signal, 6)  # Input entire signal and truncate
+array([15.,  -4.,   0.,  -1.,   0.,  -4.])
+\end{lstlisting}
+
+\begin{lstlisting}[language=Octave,
+                   caption={Octave code sample \cite{octave-special-matrices}.},
+                   label={lst:octave}]
+y = [];
+for i = 1:columns (r)
+  y = [y, x(r(1,i)*ones(1, r(2,i)))];
+endfor
+\end{lstlisting}
 
 \subsection{Footnotes}
 Footnotes may be included in this fashion\footnote{Hello}.
@@ -185,5 +210,10 @@ We list cases of cross-referencing to check how they look.
   \item Two:
   \item List:
 \end{itemize}
-\end{itemize}
+\item Listings
+\begin{itemize}
+  \item Single: \cref{lst:python}
+  \item Two: \cref{lst:octave,lst:python}
+  \item List: 
+\end{itemize} \end{itemize}
 
