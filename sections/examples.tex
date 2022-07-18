@@ -163,8 +163,14 @@ array([15.,  -4.,   0.,  -1.,   0.,  -4.])
                    label={lst:octave}]
 m = rows (A); n = columns (A);
 [U, S, V] = svd (A);
+## determine the regularization factor alpha
+## alpha =
+## transform to orthogonal basis
 b = U'*b;
+## Use the standard formula, replacing A with S.
+## S is diagonal, so the following will be very fast and accurate.
 x = (S'*S + alpha^2 * eye (n)) \ (S' * b);
+## transform to solution basis
 x = V*x;
 \end{lstlisting}
 
