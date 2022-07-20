@@ -65,8 +65,8 @@ Inkscape™ logo. Inkscape is a \gls{svg} editor \cite{inkscape}.}
 
 \begin{figure}
 \includegraphics[width=\textwidth]{images/photo-alarm-clock.jpg}
-\caption{\label{fig:photo} Example raster image: photography from the
-project \cite{thomashoullier/alarm-clock}.}
+\caption{\label{fig:photo} Example raster image: photograph from
+\cite{thomashoullier/alarm-clock}.}
 \end{figure}
 
 My own rules of thumb regarding the format of images are:
@@ -122,7 +122,7 @@ Tables may be created in the following way (see
 
 \subsection{Algorithms}
 Algorithms may be typeset as follows
-\cref{alg:euclid-gcd,alg:eratosthenes-sieve}.
+(see \cref{alg:euclid-gcd,alg:eratosthenes-sieve,alg:disjoint-decomp}).
 
 \begin{algorithm}
 \caption{\label{alg:euclid-gcd} Euclid's algorithm for \gls{GCD}
@@ -154,9 +154,38 @@ $A \gets$ array of boolean elements set to True, indexed from $2$ up to $n$.\;
 \KwRet{Every i such that A[i]}
 \end{algorithm}
 
+\begin{algorithm}
+\caption{\label{alg:disjoint-decomp} Disjoint Decomposition
+         (sample in \cite{algorithm2e}).}
+\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+\Input{A bitmap $Im$ of size $w\times l$}
+\Output{A partition of the bitmap}
+\BlankLine
+\emph{special treatment of the first line}\;
+\For{$i\leftarrow 2$ \KwTo $l$}{
+\emph{special treatment of the first element of line $i$}\;
+\For{$j\leftarrow 2$ \KwTo $w$}{\label{forins}
+\Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
+\Up$\leftarrow$ \FindCompress{$Im[i-1,]$}\;
+\This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
+\If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
+\lIf{\Left $<$ \This}{\Union{\Left,\This}}
+\lElse{\Union{\This,\Left}}
+}
+\If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
+\lIf{\Up $<$ \This}{\Union{\Up,\This}}
+\tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
+\lElse{\Union{\This,\Up}}\tcp*[h]{\This linked to \Up}\label{lelse}
+}
+}
+\lForEach{element $e$ of the line $i$}{\FindCompress{p}}
+}
+\end{algorithm}
+
 \subsection{Inline code and Blocks of code}
-Inline code: \lstinline[style=mystyle,language=sh]{cat /etc/group}. Blocks of
-code are written as \cref{lst:python,lst:octave,lst:common-lisp}.
+Commands can be inlined: \lstinline[style=mystyle,language=sh]{cat /etc/group}.
+Blocks of code are written as \cref{lst:python,lst:octave,lst:common-lisp}.
 
 \begin{lstlisting}[language=Python,
                    caption={Python code sample \cite{numpy-hfft}.},
@@ -241,8 +270,8 @@ We list cases of cross-referencing to check how they look.
 \item Algorithms
 \begin{itemize}
   \item Single: \cref{alg:euclid-gcd}
-  \item Two:
-  \item List:
+  \item Two: \cref{alg:eratosthenes-sieve,alg:euclid-gcd}
+  \item List: \cref{alg:eratosthenes-sieve,alg:euclid-gcd,alg:disjoint-decomp}
 \end{itemize}
 \item Listings
 \begin{itemize}
