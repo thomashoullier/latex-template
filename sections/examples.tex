@@ -142,7 +142,7 @@ $Y \gets B$\;
 
 \subsection{Inline code and Blocks of code}
 Inline code: \lstinline[style=mystyle,language=sh]{cat /etc/group}. Blocks of code are
-\cref{lst:python,lst:octave}.
+\cref{lst:python,lst:octave,lst:common-lisp}.
 
 \begin{lstlisting}[language=Python,
                    caption={Python code sample \cite{numpy-hfft}.},
@@ -172,6 +172,20 @@ b = U'*b;
 x = (S'*S + alpha^2 * eye (n)) \ (S' * b);
 ## transform to solution basis
 x = V*x;
+\end{lstlisting}
+
+\begin{lstlisting}[language=Lisp,
+                   caption={Common Lisp code sample
+                            \cite{common-lisp-example}.},
+                   label={lst:common-lisp}]
+(defun entropy (string &aux (length (length string)))
+  (declare (type string string))
+  (let ((table (make-hash-table)))
+    (loop for char across string
+          do (incf (gethash char table 0)))
+    (- (loop for freq being each hash-value in table
+             for freq/length = (/ freq length)
+             sum (* freq/length (log freq/length 2))))))
 \end{lstlisting}
 
 \subsection{Footnotes}
@@ -220,6 +234,6 @@ We list cases of cross-referencing to check how they look.
 \begin{itemize}
   \item Single: \cref{lst:python}
   \item Two: \cref{lst:octave,lst:python}
-  \item List: 
+  \item List: \cref{lst:octave,lst:python,lst:common-lisp}
 \end{itemize} \end{itemize}
 
