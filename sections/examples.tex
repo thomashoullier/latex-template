@@ -121,12 +121,12 @@ Tables may be created in the following way (see
 \end{table}
 
 \subsection{Algorithms}
-Algorithms may be typeset as follows \cref{alg:euclid-gcd}.
+Algorithms may be typeset as follows
+\cref{alg:euclid-gcd,alg:eratosthenes-sieve}.
 
 \begin{algorithm}
 \caption{\label{alg:euclid-gcd} Euclid's algorithm for \gls{GCD}
 \cite{enwiki:euclid-algorithm}.}
-\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
 
 \Input{$(A, B) \in \mathbb{N}$}
 \KwResult{$\text{gcd}(A, B)$}
@@ -140,9 +140,23 @@ $Y \gets B$\;
 \KwRet{$X$}
 \end{algorithm}
 
+\begin{algorithm}
+\caption{\label{alg:eratosthenes-sieve} Eratosthenes' Sieve
+         \cite{enwiki:eratosthenes-sieve}.}
+\Input{$n \in \mathbb{N}, n>1$}
+\KwResult{Set of prime numbers from $2$ up to $n$}
+$A \gets$ array of boolean elements set to True, indexed from $2$ up to $n$.\;
+\For{$i \in \llbracket 2, \floor{\sqrt(n)} \rrbracket$}{
+  \If{A[i]}{
+    \For{$j \in \llbracket 0, \floor{\frac{n - i^2}{i}} \rrbracket$}{
+      A[i] $\gets$ False\;
+    }}}
+\KwRet{Every i such that A[i]}
+\end{algorithm}
+
 \subsection{Inline code and Blocks of code}
-Inline code: \lstinline[style=mystyle,language=sh]{cat /etc/group}. Blocks of code are
-\cref{lst:python,lst:octave,lst:common-lisp}.
+Inline code: \lstinline[style=mystyle,language=sh]{cat /etc/group}. Blocks of
+code are written as \cref{lst:python,lst:octave,lst:common-lisp}.
 
 \begin{lstlisting}[language=Python,
                    caption={Python code sample \cite{numpy-hfft}.},
