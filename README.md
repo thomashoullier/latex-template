@@ -1,9 +1,10 @@
 # Personal LaTeX template
-This is my personal LaTeX template. As is the case with a lot of other people,
-I arrived at this result by writing a PhD thesis.
+This is my personal LaTeX template for technical articles of length ranging
+from a few pages to some dozens.
 
-This template is mainly a collection of packages useful for scientific writing
-in physics. It is not particularly well presented.
+This template is mainly a collection of packages and customizations useful for
+scientific writing in physics. The appearance is not particularly well
+thought-out.
 
 **Coming soon:** Release 1.0 with PDF example.
 

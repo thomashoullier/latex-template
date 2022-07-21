@@ -195,6 +195,7 @@ automatic syntax highlighting for most common programming languages.  Commands
 can be inlined: \lstinline[style=mystyle,language=sh]{cat /etc/group}.  Blocks
 of code are written as \cref{lst:python,lst:octave,lst:common-lisp}.
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[language=Python,
                    caption={Python code sample \cite{numpy-hfft}.},
                    label={lst:python}]
@@ -207,8 +208,9 @@ array([15.,  -4.,   0.,  -1.,   0.,  -4.])
 
 >>> np.fft.hfft(signal, 6)  # Input entire signal and truncate
 array([15.,  -4.,   0.,  -1.,   0.,  -4.])
-\end{lstlisting}
+\end{lstlisting} \end{minipage}
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[language=Octave,
                    caption={Octave code sample \cite{octave-example}.},
                    label={lst:octave}]
@@ -223,8 +225,9 @@ b = U'*b;
 x = (S'*S + alpha^2 * eye (n)) \ (S' * b);
 ## transform to solution basis
 x = V*x;
-\end{lstlisting}
+\end{lstlisting} \end{minipage}
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[language=Lisp,
                    caption={Common Lisp code sample
                             \cite{common-lisp-example}.},
@@ -237,7 +240,7 @@ x = V*x;
     (- (loop for freq being each hash-value in table
              for freq/length = (/ freq length)
              sum (* freq/length (log freq/length 2))))))
-\end{lstlisting}
+\end{lstlisting} \end{minipage}
 
 \subsection{Footnotes}
 Footnotes may be included with the native feature \footnote{Hello}.
