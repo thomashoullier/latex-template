@@ -1,23 +1,26 @@
 \section{Examples}
-We provide examples of some of the latex features and packages we use most.
+We provide examples of some of the LaTeX features and packages we use most.
 This is both a visual check that our template formats things the way we
 want to, and a reference on how to use relevant LaTeX features.
 
 \subsection{Citation}
-Citations are made in the following way:
+We use \lstinline{BibLaTeX} \cite{biblatex} for bibliography management . The
+bibliography will automatically only include the references which were cited in
+the document.
+
+Citations look like:
 \begin{itemize}
 \item Single citation: \cite{Gehrels:2016}.
 \item Two citations: \cite{inkscape,gnuplot}.
 \item Citations list: \cite{inkscape,gnuplot,thomashoullier/alarm-clock}
 \end{itemize}
 
-The bibliography will automatically only include the references which
-were cited in the document.
-
 \subsection{Acronyms}
-Acronyms are defined in a list at the beginning of the document. Only
-actually used acronyms are included. The acronyms are defined in the text
-automatically the first time they are used.
+We use \lstinline{glossaries} \cite{glossaries} for acronyms list and eventual
+glossaries (not included in the present template).  Acronyms are defined in a
+list at the beginning of the document. Only actually used acronyms are
+included. The acronyms are defined in the text automatically the first time
+they are used.
 
 For instance:
 \begin{itemize}
@@ -50,6 +53,7 @@ See the LaTeX equation examples at \cite{equationsheet,SO-latex-equations}.
 
 \subsection{Figures}
 Figures have the following appearance (see \cref{fig:svg,fig:sinus,fig:photo}).
+We use the package \lstinline{svg} \cite{svg} for importing \gls{svg} files.
 
 \begin{figure}
 \includesvg[width=.6\textwidth]{images/inkscape-logo.svg}
@@ -93,7 +97,7 @@ that would be excessive for document rendering.
 \end{itemize}
 
 \subsection{Tables}
-Tables may be created in the following way (see
+Tables may be created in the usual way (see
 \cref{tab:example1,tab:example2,tab:example3}).
 
 \begin{table} \caption{\label{tab:example1} Example table.}
@@ -121,6 +125,7 @@ Tables may be created in the following way (see
 \end{table}
 
 \subsection{Algorithms}
+Algorithms use the \lstinline{algorithm2e} \cite{algorithm2e} package.
 Algorithms may be typeset as follows
 (see \cref{alg:euclid-gcd,alg:eratosthenes-sieve,alg:disjoint-decomp}).
 
@@ -184,8 +189,11 @@ $A \gets$ array of boolean elements set to True, indexed from $2$ up to $n$.\;
 \end{algorithm}
 
 \subsection{Inline code and Blocks of code}
-Commands can be inlined: \lstinline[style=mystyle,language=sh]{cat /etc/group}.
-Blocks of code are written as \cref{lst:python,lst:octave,lst:common-lisp}.
+The package \lstinline{listings} \cite{listings} is used to display inline
+code, verbatim characters and sentences, and blocks of code. It features
+automatic syntax highlighting for most common programming languages.  Commands
+can be inlined: \lstinline[style=mystyle,language=sh]{cat /etc/group}.  Blocks
+of code are written as \cref{lst:python,lst:octave,lst:common-lisp}.
 
 \begin{lstlisting}[language=Python,
                    caption={Python code sample \cite{numpy-hfft}.},
@@ -232,21 +240,23 @@ x = V*x;
 \end{lstlisting}
 
 \subsection{Footnotes}
-Footnotes may be included in this fashion\footnote{Hello}.
+Footnotes may be included with the native feature \footnote{Hello}.
 
 \subsection{Epigraphs}
 \epigraph{Respondeo dicendum quod necesse est dicere spiritum sanctum a filio
 esse. Si enim non esset ab eo, nullo modo posset ab eo personaliter distingui.}
 {Sanctus Thomas Aquinas -- Summa Theologiae I, q.36, a.2}
 
-Epigraphs can be included. They are meant for the beginning of sections.
+Epigraphs can be included thanks to \lstinline{epigraph} \cite{epigraph}.
+They are meant for the beginning of sections in this template.
 
 \subsection{Icons}
-The fontawesome package \cite{fontawesome-latex} may be used for small icons
-in-line with the text \faSmileO~\faMedkit~\faBicycle.
+The \lstinline{fontawesome} package \cite{fontawesome-latex} may be used for
+small icons in-line with the text \faSmileO~\faMedkit~\faBicycle.
 
 \subsection{Cross-references}
-We list cases of cross-referencing to check how they look.
+We use \lstinline{cleveref} \cite{cleveref} for cross-referencing.  We list
+cases of cross-referencing to check how they look.
 
 \begin{itemize}
 \item Equations
