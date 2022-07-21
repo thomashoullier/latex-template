@@ -6,7 +6,7 @@ This template is mainly a collection of packages and customizations useful for
 scientific writing in physics. The appearance is not particularly well
 thought-out.
 
-**Coming soon:** Release 1.0 with PDF example.
+The PDF output of the template may be found on my website [1].
 
 ## Compile
 Compile the document with, while in the same folder as `main.tex`:
@@ -14,3 +14,6 @@ Compile the document with, while in the same folder as `main.tex`:
 ```shell
 latexmk -pdf main.tex
 ```
+
+## References
+1. [LaTeX article template PDF output](https://thomashoullier.com/writeups/latex-template/latex-template.html)
